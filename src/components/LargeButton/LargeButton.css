@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+.button {
+    background-color: #0b6bf2;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px;
+    font-family: 'Rubic', sans-serif;
+    font-weight: 500;
+    width: 150px;
+    height: 38px;
+    border-radius: 4px;
+    min-width: 150px;
+    padding: 11px 15px;
+}
+
+.neutral {
+    background-color: #0b6bf2;
+}
+
+.pressed {
+    background-color: #0243eb;
+}
+
+.inactive {
+    background-color: #dbe9fd;
+}
