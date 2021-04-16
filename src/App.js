@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ToDoList from "./components/ToDoList/ToDoList";
+
+const initialState = [
+  {text: 'first text', done: false, id: 1},
+  {text: 'second text', done: true, id: 2},
+];
 
 function App() {
+
+  const [ tasks, setTasks ] = useState(initialState);
+
+  const onItemClickHandler = (item, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const newTasks = tasks.map(task => {
+      if (task.id === item.id) {
+        return {
+          ...item,
+          done: true
+        }
+      }
+      return task;
+    });
+
+    setTasks(newTasks);
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDoList tasks={ tasks } onItemClick={ onItemClickHandler }/>
     </div>
   );
 }
