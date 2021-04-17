@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import ToDoList from "./components/ToDoList/ToDoList";
 import LargeButton from "./components/LargeButton/LargeButton";
+import { tasks } from './utils';
 
-const initialState = [
-  {text: 'first text', done: false, id: 1},
-  {text: 'second text', done: true, id: 2},
-];
+const initialState = tasks;
 
 function App() {
 
@@ -30,7 +28,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <ToDoList tasks={ tasks } onItemClick={ onItemClickHandler }/>
       <LargeButton text='Close Shipment' mode='neutral' />
       <LargeButton text='Close Shipment' mode='pressed' />

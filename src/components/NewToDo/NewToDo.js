@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewToDo = ( { task, onItemClick } ) => {
   return (
-    <li key={ task.id } onClick={ (event) => onItemClick(task, event) }>{ task.text } </li>
+    <li onClick={ (event) => onItemClick(task, event) }>{ task.text } </li>
   );
 };
 

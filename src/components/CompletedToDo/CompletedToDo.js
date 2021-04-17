@@ -3,7 +3,7 @@ import './CompletedToDo.css';
 
 const CompletedToDo = ( {task} ) => {
   return (
-    <li key={ task.id } className='completedToDo'>{ task.text }</li>
+    <li className='completedToDo'>{ task.text }</li>
   );
 };
 

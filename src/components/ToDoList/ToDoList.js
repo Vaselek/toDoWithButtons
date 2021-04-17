@@ -3,10 +3,10 @@ import CompletedToDo from "../CompletedToDo/CompletedToDo";
 import NewToDo from "../NewToDo/NewToDo";
 import './ToDoList.css';
 
-const ToDoList = ({tasks, onItemClick}) => {
+const ToDoList = ( { tasks, onItemClick }) => {
   const tasksList = tasks.map(task => task.done ?
-    <CompletedToDo task={task} /> :
-    <NewToDo onItemClick={onItemClick} task={task} />
+    <CompletedToDo key={ task.id } task={ task } /> :
+    <NewToDo key={ task.id } onItemClick={ onItemClick } task={ task } />
   );
 
   return (
